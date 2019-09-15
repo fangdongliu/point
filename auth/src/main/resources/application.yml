@@ -1,0 +1,26 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://114.115.180.42:3306/pt2?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+#    url: jdbc:mysql://localhost:3306/index_point?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+#    password: 123456
+    password: root
+  main:
+    allow-bean-definition-overriding: true
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  tokenHead: bearer
+  route:
+    authentication:
+      path: /auth
+      refresh: /refresh
